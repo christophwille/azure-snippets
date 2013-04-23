@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<h2>@ViewBag.Title</h2>
+<p>
+    UPN: @ViewBag.UserPrincipalName<br />
+    Name: @ViewBag.UserPrincipalName<br />
+</p>
+
+@if (User.IsInRole("Administrators"))
+{
+    <text>A warm welcome to you, administrator!</text>
+}
+
+<p>
+@if (Request.IsAuthenticated)
+{  
+    @Html.ActionLink("Signout", "SignOut", "SignOut")
+}
+</p>

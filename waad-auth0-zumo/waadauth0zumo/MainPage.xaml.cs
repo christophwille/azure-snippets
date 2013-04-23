@@ -37,7 +37,7 @@ namespace waadauth0zumo
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
             const string zumoUrl = "https://waadthefsck.azure-mobile.net/";
-            const string zumoMasterKey = "REMOVED";
+            const string zumoApplicationKey = "REMOVED";
 
             const string auth0Home = "christophwille";
             const string auth0ClientId = "REMOVED";
@@ -61,7 +61,7 @@ namespace waadauth0zumo
 
             var mobileService = new MobileServiceClient(
                             zumoUrl,
-                            zumoMasterKey
+                            zumoApplicationKey
                         );
 
             // Make sure that Insert and Read permissions are set to "Only Authenticated Users"

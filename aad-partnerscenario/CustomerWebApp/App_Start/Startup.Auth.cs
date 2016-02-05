@@ -35,16 +35,16 @@ namespace CustomerWebApp
 
             app.UseCookieAuthentication(new CookieAuthenticationOptions());
 
-            app.UseErrorPage(new ErrorPageOptions()
-            {
-                ShowCookies = true,
-                ShowEnvironment = true,
-                ShowQuery = true,
-                ShowExceptionDetails = true,
-                ShowHeaders = true,
-                ShowSourceCode = true,
-                SourceCodeLineCount = 10
-            });
+            //app.UseErrorPage(new ErrorPageOptions()
+            //{
+            //    ShowCookies = true,
+            //    ShowEnvironment = true,
+            //    ShowQuery = true,
+            //    ShowExceptionDetails = true,
+            //    ShowHeaders = true,
+            //    ShowSourceCode = true,
+            //    SourceCodeLineCount = 10
+            //});
 
             app.UseOpenIdConnectAuthentication(
                 new OpenIdConnectAuthenticationOptions

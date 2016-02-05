@@ -18,6 +18,4 @@ This AAD application holds the list of all valid customer application redirect u
 
 ![multiple reply urls defined](multireplyurlsonpartnerapp.png?raw=true")
 
-Code see Startup.Auth.cs 
-
-[link1](http://)
+For code please see in customer solution [Startup.Auth.cs](https://github.com/christophwille/azure-snippets/blob/master/aad-partnerscenario/CustomerWebApp/App_Start/Startup.Auth.cs) and [PartnerLoginController.cs](https://github.com/christophwille/azure-snippets/blob/master/aad-partnerscenario/CustomerWebApp/Controllers/PartnerLoginController.cs), in partner solution [Startup.Auth.cs](https://github.com/christophwille/azure-snippets/blob/master/aad-partnerscenario/PartnerWebApp/App_Start/Startup.Auth.cs) is mildly interesting.

@@ -28,6 +28,7 @@ namespace CustomerWebApp
 
         private static string partnerClientId = ConfigurationManager.AppSettings["partner:ClientId"];
         private static string partnerTenantId = ConfigurationManager.AppSettings["partner:TenantId"];
+        private static string partnerRedirectUri = "/PartnerLogin/Welcome";
 
         public void ConfigureAuth(IAppBuilder app)
         {
@@ -70,11 +71,13 @@ namespace CustomerWebApp
             Trace.Write("RedirectToIdentityProvider"); // p164
 
             string redirectUri = context.OwinContext.Authentication?.AuthenticationResponseChallenge?.Properties?.RedirectUri;
-            // string appBaseUrl = context.Request.Scheme + "://" + context.Request.Host + context.Request.PathBase;
+            string appBaseUrl = context.Request.Scheme + "://" + context.Request.Host + context.Request.PathBase;
 
-            if ("/PartnerLogin/Welcome" == redirectUri)
+            // Are we called from the PartnerLogin controller? If so, switch to the partner application's coordinates
+            if (partnerRedirectUri == redirectUri)
             {
                 context.ProtocolMessage.ClientId = partnerClientId;
+                context.ProtocolMessage.RedirectUri = appBaseUrl + partnerRedirectUri; // Note that this Uri must be registered
             }
 
             return Task.FromResult(0);

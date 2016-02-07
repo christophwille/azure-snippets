@@ -11,14 +11,19 @@ namespace CustomerWebApp.Controllers
 {
     public class PartnerLoginController : Controller
     {
-        public void SignIn()
+        public ActionResult SignIn()
         {
             if (!Request.IsAuthenticated)
             {
                 HttpContext.GetOwinContext().Authentication.Challenge(
                     new AuthenticationProperties { RedirectUri = "/PartnerLogin/Welcome" },
                     OpenIdConnectAuthenticationDefaults.AuthenticationType);
+
+
+                return new EmptyResult();
             }
+
+            return Welcome();
         }
 
         public ActionResult Welcome()

@@ -1,16 +1,26 @@
-Single Sign On (SSO) with Windows Azure Active Directory (WAAD)
+AAD Partner Login
 ======================
 
-An enhanced sign-on MVC application based off of the WAAD GA walkthroughs, built for DotNetCologne 2013.
+Scenario: A partner sells a Web app x-times to customers, but wants to retain a login for her AAD domain to this customer Web site (support, you-name-it). In the simplest way possible.
+
+The implementation is via an AAD application at the partner that holds all x redirect uri to the x client application installations. The respective client application accepts its tenant 
+and its client id, plus the tenant and client id of the partner application for login.
+
+(Page number "pXXX" refer to the "Modern Authentication with Azure Active Directory for Web Applications" book)
+
+Single Sign On (SSO) with Azure Active Directory (AAD)
+======================
+
+An enhanced sign-on MVC application based off of the AAD GA walkthroughs, built for DotNetCologne 2013.
 
 Please see waad-sso-sample\SsoForReal\ReadMe.txt.
 
-Mobile Services Authentication with Windows Azure Active Directory (WAAD) via Auth0
+Mobile Services Authentication with Azure Active Directory (AAD) via Auth0
 ======================
 
 You need: a Mobile Service (with the standard Todo table generated, Insert and Read permissions set 
 to Only Authenticated Users). Also, you need an Auth0 account, that is configured for an enterprise 
-connection to Windows Azure AD plus under Add-ons for Mobile Services.
+connection to Azure AD plus under Add-ons for Mobile Services.
 
 Inspired by
 
